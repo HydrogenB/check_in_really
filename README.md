@@ -1,68 +1,151 @@
-# Check In Really
 
-Check In Really is an internal mobile event application designed for employees to check in at various physical locations. The app utilizes geolocation to confirm check-ins and retrieves achievement titles via an API upon successful check-in.
+Flutter application for single use.
+Project Name: Check In Really
+Purpose:
+To create an internal mobile event app for employees to check in at 7 physical locations. The app will confirm check-ins via geolocation, and upon success, it will retrieve and display an achievement title via API.
 
-## Key Features
+🧩 Key Features
+Feature	Description
+Location-Based Check-In	App detects the user's GPS location to validate check-in.
+Check-In Confirmation	If location is within range, show animation + success message + achievement title.
+Achievement API Call	After check-in, the app sends an API call and displays the returned achievement title.
+7 Unique Locations	Each point has unique coordinates.
+Progress Tracker	Display user progress (e.g., 3/7 completed) visually like a progress bar or achievement wheel.
+Gamified UI	Friendly animations, icons, maybe confetti on full completion.
+Admin Config Panel (Optional)	To manage location coordinates and event dates (future-proofing).
+🎯 Experience Design Goals
+Simple: One-tap check-in with no friction.
 
-- **Location-Based Check-In**: The app detects the user's GPS location to validate check-ins at 7 unique locations.
-- **Check-In Confirmation**: If the user is within range, the app displays an animation, a success message, and the achievement title.
-- **Achievement API Call**: After check-in, the app sends an API call to retrieve and display the achievement title.
-- **Progress Tracker**: Users can visually track their progress (e.g., 3/7 completed) through a progress bar or achievement wheel.
-- **Gamified UI**: The app features friendly animations, icons, and celebratory effects like confetti upon full completion.
-- **Admin Config Panel (Optional)**: Future-proofing with an admin panel to manage location coordinates and event dates.
+Motivating: Celebrate every check-in with animations.
 
-## Experience Design Goals
+Visual: Clear map + location progress tracking.
 
-- **Simple**: One-tap check-in with minimal friction.
-- **Motivating**: Celebrate every check-in with engaging animations.
-- **Visual**: Clear map and location progress tracking.
-- **Fast**: Quick API calls for achievements.
-- **Offline-Aware**: Graceful handling when location/GPS is unavailable.
+Fast: API call with achievement is fast and clear.
 
-## UX/UI Design Flows
+Offline-Aware: Graceful fallback or prompt when location/GPS is off.
 
-1. **Home Screen**: Displays the progress indicator, check-in button, and optional map view.
-2. **Check-In Screen**: Handles location permission checks and displays the check-in status.
-3. **Achievements Screen**: Lists achievements and their statuses.
+📱 UX/UI Design Flows
+🔹1. Home Screen
+Header: "Check In Really"
 
-## Technical Requirements
+Progress Indicator: 7 dots, filled when completed.
 
-- **Platform**: Flutter (iOS & Android)
-- **GPS Accuracy**: ≤50 meters
-- **API Call**: `GET /achievements?point_id={id}`
-- **Auth**: Internal SSO (e.g., by Employee ID or Email)
-- **Storage**: Local progress saved with fallback (SQLite or SharedPrefs)
+CTA Button: "Check In Now"
 
-## User Roles
+Map View (optional): Show nearby check-in points.
 
-- **Employee**: Check-in and view achievements.
-- **Admin (Optional)**: Manage location list and track completion.
+Settings Icon: For language/GPS/help.
 
-## User Stories
+🔹2. Check-In Screen
+Permission Check: Ask for location permission (if not yet granted).
 
-- **US001**: Check-In Flow
-- **US002**: View Achievements
-- **US003**: See Progress Summary
-- **US004**: Handle Location Errors
-- **US005**: Permission Handling
+Check-in Button (Disabled/Enabled based on proximity)
 
-## Setup Instructions
+Status: “You’re here!” or “You’re too far.”
 
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Run `flutter pub get` to install dependencies.
-4. Use `flutter run` to start the application on your device or emulator.
+Check-in Animation: Pulsing check-in icon or radar effect.
 
-## Usage
+API Call: Show loading → display returned achievement title.
 
-- Open the app and grant location permissions.
-- Tap "Check In Now" when at a check-in location.
-- View your achievements and progress on the respective screens.
+Toasts/Snackbar: “Congrats! You unlocked: [Title]”
 
-## Contributing
+🔹3. Achievements Screen
+List/Grid of 7: Each with:
 
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+Location Name
 
-## License
+Status: Checked in or not
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+Title (after check-in)
+
+Optional: Photo upload or emoji badges
+
+🧠 UX Best Practices Applied
+Progressive Disclosure: Start simple, show more as users interact.
+
+Micro-Interactions: Vibrate slightly on success, animate the check-in icon.
+
+Gamification: Celebrate success, visually show progress.
+
+Accessibility: Large tap targets, readable text.
+
+Fail States:
+
+Location Denied: Show explanation + CTA to enable.
+
+Out of Range: "You're too far! Move closer to the point."
+
+🔐 Technical Requirements
+Area	Details
+Platform	Flutter (iOS & Android)
+GPS Accuracy	≤50 meters
+API Call	GET /achievements?point_id={id}
+Auth	Internal SSO (e.g., by Employee ID or Email)
+Storage	Local progress saved with fallback (SQLite or SharedPrefs)
+Timeout	API max wait 5 seconds
+👥 User Roles
+Role	Access
+Employee	Check-in, view achievements
+Admin (optional)	Manage location list, track completion (future scope)
+📋 User Stories
+✅ US001 – Check-In Flow
+As an employee
+I want to check in when I’m at a location
+So that I can unlock a new achievement
+
+Acceptance Criteria:
+
+GPS must be enabled.
+
+Must be within 50 meters of target.
+
+Upon check-in, API is called and achievement is shown.
+
+UI animates the success.
+
+✅ US002 – View Achievements
+As an employee
+I want to view all check-in locations and my progress
+So that I know which ones are left
+
+Acceptance Criteria:
+
+Visual indicator of 7 points.
+
+Each checked-in location shows a unique title.
+
+✅ US003 – See Progress Summary
+As an employee
+I want to see how many points I’ve checked in
+So that I can complete all 7
+
+Acceptance Criteria:
+
+Show 0/7 → 7/7 clearly.
+
+Optional: show mini confetti or badge when finished.
+
+✅ US004 – Handle Location Errors
+As a user
+I want to be told if I’m out of range
+So that I know what to do next
+
+Acceptance Criteria:
+
+Clear message when GPS is off.
+
+Clear message when too far.
+
+Retry button available.
+
+✅ US005 – Permission Handling
+As a user
+I want to understand why the app needs my location
+So that I can confidently allow it
+
+Acceptance Criteria:
+
+Permission request only appears once.
+
+"We use your location to check you in at event points!" text.
+

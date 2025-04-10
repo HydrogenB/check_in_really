@@ -194,6 +194,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_map",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_map-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_plugin_android_lifecycle",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.18",
       "packageUri": "lib/",
@@ -332,6 +338,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "io",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/io-1.0.4",
       "packageUri": "lib/",
@@ -354,6 +366,18 @@
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/json_annotation-4.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "latlong2",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/latlong2-0.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "lists",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/lists-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "logging",
@@ -382,6 +406,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "mgrs_dart",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/mgrs_dart-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -476,8 +506,20 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "polylabel",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/polylabel-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.13"
+    },
+    {
       "name": "pool",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/pool-1.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "proj4dart",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/proj4dart-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -632,6 +674,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "unicode",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/unicode-0.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/uuid-4.2.2",
       "packageUri": "lib/",
@@ -668,6 +716,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "wkt_parser",
+      "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/wkt_parser-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "xdg_directories",
       "rootUri": "file:///C:/Users/T956037/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.0.4",
       "packageUri": "lib/",
@@ -686,7 +740,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2025-04-10T16:59:27.374336Z",
+  "generated": "2025-04-10T17:56:03.882294Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

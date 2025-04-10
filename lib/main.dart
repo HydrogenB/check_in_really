@@ -6,14 +6,17 @@ import 'services/location_service.dart';
 import 'screens/home_screen.dart';
 import 'design_system/theme.dart';
 
-void main() {
-  setupDependencies();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupDependencies();
   runApp(const MyApp());
 }
 
-void setupDependencies() {
+Future<void> setupDependencies() async {
   final getIt = GetIt.instance;
-  getIt.registerSingleton<LocationService>(LocationService());
+  final locationService = LocationService();
+  await locationService.initialize(); // Initialize location service
+  getIt.registerSingleton<LocationService>(locationService);
 }
 
 class MyApp extends StatelessWidget {
@@ -31,13 +34,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Check In Really',
-        theme: ThemeData(
-          primaryColor: AppTheme.primary,
-          textTheme: AppTheme.textTheme,
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: AppTheme.primaryButtonStyle,
-          ),
-        ),
+        theme: AppTheme.light,
         home: const HomeScreen(),
       ),
     );

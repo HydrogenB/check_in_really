@@ -1,51 +1,25 @@
 import 'package:flutter/material.dart';
+import 'colors.dart';
+import 'typography.dart';
+import 'buttons.dart';
 
 class AppTheme {
-  // Colors
-  static const Color primary = Color(0xFFE00000);
-  static const Color onPrimary = Color(0xFFFFFFFF);
-  static const Color surface = Color(0xFFFCFCFF);
-  static const Color surfaceVariant = Color(0xFFF5DDDA);
-  static const Color onSurface = Color(0xFF1A1C1E);
-  static const Color error = Color(0xFFFF0000);
-
-  // Text Styles
-  static const TextTheme textTheme = TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 32,
-      fontWeight: FontWeight.bold,
-      color: onSurface,
-    ),
-    headlineLarge: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: onSurface,
-    ),
-    titleLarge: TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: onSurface,
-    ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      color: onSurface,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 14,
-      color: onSurface,
-    ),
-  );
-
-  // Button Styles
-  static final ButtonStyle primaryButtonStyle = ElevatedButton.styleFrom(
-    backgroundColor: primary,
-    foregroundColor: onPrimary,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(30),
-    ),
-    padding: const EdgeInsets.symmetric(
-      horizontal: 24,
-      vertical: 16,
-    ),
-  );
+  static ThemeData get light => ThemeData(
+        primaryColor: AppColors.primary,
+        scaffoldBackgroundColor: AppColors.background,
+        textTheme: const TextTheme(
+          displayLarge: AppTypography.headline1,
+          displayMedium: AppTypography.headline2,
+          displaySmall: AppTypography.headline3,
+          bodyLarge: AppTypography.body1,
+          bodyMedium: AppTypography.body2,
+          bodySmall: AppTypography.caption,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: AppButtons.primaryButton,
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: AppButtons.secondaryButton,
+        ),
+      );
 }
