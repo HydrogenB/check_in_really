@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
-import 'typography.dart';
+import 'index.dart';
 
 class ToastNotification extends StatelessWidget {
   final String title;

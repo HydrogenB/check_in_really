@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
-import 'spacing.dart';
 
 class TabBarDelegate extends SliverPersistentHeaderDelegate {
   final String activeTab;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../design_system/colors.dart';
-import '../design_system/spacing.dart';
 
 class CheckInButton extends StatelessWidget {
   final bool enabled;
