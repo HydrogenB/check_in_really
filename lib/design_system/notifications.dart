@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'index.dart';
+import 'spacing.dart';
 
 class ToastNotification extends StatelessWidget {
   final String title;
@@ -20,15 +20,15 @@ class ToastNotification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppSpacing.borderRadius),
       ),
       child: Row(
         children: [
           Icon(icon, color: textColor),
-          const SizedBox(width: 12),
+          const SizedBox(width: AppSpacing.sm),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
